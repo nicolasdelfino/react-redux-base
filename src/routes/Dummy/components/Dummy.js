@@ -17,9 +17,9 @@ class Dummy extends React.Component {
 
   getBar () {
     if (this.props.showBar) {
-      return <div style={{ flex:1, marginTop: 20, height: 10, backgroundColor: '#000000', alignSelf:'center' }} />
+      return <div style={{ flex:1, marginTop: 20, height: 40, backgroundColor: '#000000', alignSelf:'center' }} />
     }
-    return <div style={{ flex:1, marginTop: 20, height: 10, backgroundColor: '#CCC', alignSelf:'center' }} />
+    return <div style={{ flex:1, marginTop: 20, height: 40, backgroundColor: '#CCC', alignSelf:'center' }} />
   }
 
   render () {
