@@ -25,17 +25,21 @@ class Dummy extends React.Component {
   render () {
     return (
       <div>
-        <h2>Dummy test view</h2>
-        <Button text='set redux dummy to monkey' clickHandler={() => this.buttonClicked('monkey')} />
-        <Button text='set redux dummy to cat' clickHandler={() => this.buttonClicked('cat')} />
-        <hr />
-        <h2>Dummy redux value:</h2>
-        <p>{this.props.dummyText}</p>
-        <hr />
-        <Button text='toggle thing' clickHandler={() => this.toggeThing()} />
-        {this.getBar()}
-        <hr />
-        <IndexLink to='/counter'>go to counter</IndexLink>
+        <div className='blocker'>
+          <h2>Dummy redux</h2>
+          <Button text='set redux dummy to monkey' clickHandler={() => this.buttonClicked('monkey')} />
+          <Button text='set redux dummy to cat' clickHandler={() => this.buttonClicked('cat')} />
+          <p>value: {this.props.dummyText}</p>
+        </div>
+        <div className='blocker'>
+          <h2>Toggle</h2>
+          <Button text='toggle thing' clickHandler={() => this.toggeThing()} />
+          {this.getBar()}
+        </div>
+        <div className='blocker'>
+          <h2>Link</h2>
+          <IndexLink to='/counter'>go to counter</IndexLink>
+        </div>
       </div>
     )
   }

@@ -42,15 +42,18 @@ class PersonList extends React.Component {
   render () {
     return (
       <div>
-        <h2>Person list, redux-thunk</h2>
-        <Button text='load person list' clickHandler={() => this.buttonClicked()} />
-        <Button text='clear list' clickHandler={() => this.clearList()} />
-        <div>{this.getUsers()}</div>
-        <hr />
-        <h2>Album list, redux-sagas</h2>
-        <Button text='load albums' clickHandler={() => this.buttonSagaClicked()} />
-        <Button text='clear list' clickHandler={() => this.clearAlbumList()} />
-        <div>{this.getAlbums()}</div>
+        <div className='blocker'>
+          <h2>Person list, redux-thunk</h2>
+          <Button text='load person list' clickHandler={() => this.buttonClicked()} />
+          <Button text='clear list' clickHandler={() => this.clearList()} />
+          <div>{this.getUsers()}</div>
+        </div>
+        <div className='blocker'>
+          <h2>Album list, redux-sagas</h2>
+          <Button text='load albums' clickHandler={() => this.buttonSagaClicked()} />
+          <Button text='clear list' clickHandler={() => this.clearAlbumList()} />
+          <div>{this.getAlbums()}</div>
+        </div>
       </div>
     )
   }

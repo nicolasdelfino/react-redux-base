@@ -17,7 +17,7 @@ export const Header = () => (
       Dummy
     </Link>
     {' · '}
-    <Link to='/personlist' activeClassName='route--active'>
+    <Link to='/apis' activeClassName='route--active'>
       Api stuff
     </Link>
   </div>
