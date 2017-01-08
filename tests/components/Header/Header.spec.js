@@ -10,10 +10,10 @@ describe('(Component) Header', () => {
     _wrapper = shallow(<Header />)
   })
 
-  it('Renders a welcome message', () => {
+  it('Renders #r as title', () => {
     const welcome = _wrapper.find('h1')
     expect(welcome).to.exist
-    expect(welcome.text()).to.match(/React Redux Starter Kit/)
+    expect(welcome.text()).to.match(/#r/)
   })
 
   describe('Navigation links...', () => {
@@ -29,6 +29,22 @@ describe('(Component) Header', () => {
       expect(_wrapper.contains(
         <Link activeClassName='route--active' to='/counter'>
           Counter
+        </Link>
+      )).to.be.true
+    })
+
+    it('Should render a Link to Dummy route', () => {
+      expect(_wrapper.contains(
+        <Link activeClassName='route--active' to='/dummy'>
+          Dummy
+        </Link>
+      )).to.be.true
+    })
+
+    it('Should render a Link to Api route', () => {
+      expect(_wrapper.contains(
+        <Link activeClassName='route--active' to='/apis'>
+          Api stuff
         </Link>
       )).to.be.true
     })

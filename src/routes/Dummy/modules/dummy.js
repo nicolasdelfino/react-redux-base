@@ -14,9 +14,9 @@ export function toggleDummyValue () {
 }
 
 export function setDummyText (value) {
-  return {
-    type    : SET_DUMMY_TEXT,
-    payload : value
+  console.log('setDummyText(), value', value)
+  return (dispatch, getState) => {
+    dispatch({ type: SET_DUMMY_TEXT, payload : value })
   }
 }
 
@@ -42,7 +42,7 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  dummyText: 'dummy redux value',
+  dummyText: 'default value',
   dummyVal: false
 }
 export default function dummyReducer (state = initialState, action) {

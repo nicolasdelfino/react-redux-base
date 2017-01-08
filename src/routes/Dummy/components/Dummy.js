@@ -8,11 +8,13 @@ class Dummy extends React.Component {
 
   buttonClicked (value) {
     console.log('button 1 click')
-    this.props.dispatch({ type: 'SET_DUMMY_TEXT', payload: value })
+    // this.props.dispatch({ type: 'SET_DUMMY_TEXT', payload: value })
+    this.props.setText(value)
   }
 
   toggeThing () {
-    this.props.dispatch({ type: 'TOGGLE_DUMMY_VALUE' })
+    // this.props.dispatch({ type: 'TOGGLE_DUMMY_VALUE' })
+    this.props.toggle()
   }
 
   getBar () {
@@ -27,8 +29,12 @@ class Dummy extends React.Component {
       <div>
         <div className='blocker'>
           <h2>Dummy redux</h2>
-          <Button text='set redux dummy to monkey' clickHandler={() => this.buttonClicked('monkey')} />
-          <Button text='set redux dummy to cat' clickHandler={() => this.buttonClicked('cat')} />
+          <button onClick={() => this.buttonClicked('monkey')}>
+            set redux dummy to monkey
+          </button>
+          <button onClick={() => this.buttonClicked('cat')}>
+            set redux dummy to cat
+          </button>
           <p>value: {this.props.dummyText}</p>
         </div>
         <div className='blocker'>
@@ -43,6 +49,11 @@ class Dummy extends React.Component {
       </div>
     )
   }
+}
+
+Dummy.propTypes = {
+  setText   : React.PropTypes.func.isRequired,
+  toggle   : React.PropTypes.func.isRequired
 }
 
 export default Dummy

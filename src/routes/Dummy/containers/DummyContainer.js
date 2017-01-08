@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-
+import { toggleDummyValue, setDummyText } from '../modules/dummy'
 import Dummy from '../components/Dummy'
 
 const mapStateToProps = (state) => ({
@@ -7,4 +7,9 @@ const mapStateToProps = (state) => ({
   showBar: state.dummy.dummyVal
 })
 
-export default connect(mapStateToProps, null)(Dummy)
+const mapDispatchToProps = {
+  toggle: () => toggleDummyValue(),
+  setText: (value) => setDummyText(value)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dummy)
